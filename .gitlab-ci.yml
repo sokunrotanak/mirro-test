@@ -1,3 +1,10 @@
 include:
   - project: 'gitlab-silver/gitlab-templates'
     file: '/mirror-test/.gitlab-ci.yml'
+
+pullr:
+  stage: building
+  only:
+    - external_pull_requests
+  script:
+    - echo "running external PR"
